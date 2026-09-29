@@ -244,7 +244,7 @@ function App() {
             <div className="detail-doodle" aria-hidden="true"><Sparkles size={30} /><Heart size={17} /></div>
             <h3>{inclusions[activeInclusion].title}<span>.</span></h3>
             <p>{inclusions[activeInclusion].detail}</p>
-            <div className="detail-rule"><span>MADE WITH LOVE</span><span>✳</span><span>TAKEN HOME BY YOU</span></div>
+            <div className="detail-rule"><span>MADE WITH LOVE</span><Sparkles size={12} aria-hidden="true" /><span>TAKEN HOME BY YOU</span></div>
           </div>
         </div>
       </section>
@@ -327,7 +327,6 @@ function App() {
       </section>
 
       <section className="social-section">
-        <div className="social-flower" aria-hidden="true">✳</div>
         <div className="social-copy">
           <span className="eyebrow eyebrow-dark">FOLLOW ALONG FOR THE NEXT ONE</span>
           <h2>What's next? <em>Chroma knows.</em></h2>

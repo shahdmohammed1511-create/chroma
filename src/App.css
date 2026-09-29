@@ -224,7 +224,6 @@ main { overflow: hidden; }
 .frame-square { background: linear-gradient(145deg, #edd9d6, #e6c6c4); }
 
 .social-section { position: relative; display: grid; min-height: 252px; grid-template-columns: 1fr 1fr; align-items: center; gap: 7%; padding: 48px 12.5%; overflow: hidden; background: #edc8c8; }
-.social-flower { position: absolute; top: -66px; left: -31px; color: rgba(255, 248, 240, .24); font-size: 220px; line-height: 1; }
 .social-copy, .social-links { position: relative; z-index: 1; }
 .social-copy h2 { margin: 13px 0 8px; font-size: 39px; }
 .social-copy > p { color: #775e62; font-size: 10px; }

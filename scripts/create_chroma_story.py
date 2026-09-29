@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'public' / 'chroma-experience-story.png'
 WIDTH, HEIGHT = 1080, 1920
 FONT_DIR = Path('C:/Windows/Fonts')
+SITE_URL = 'https://chroma-puce-two.vercel.app/'
 
 INK = (57, 36, 45)
 ROSE = (185, 72, 104)
@@ -138,7 +139,8 @@ def build_story():
     art_draw.ellipse((311, 723, 769, 1217), outline=(255, 255, 255, 115), width=2)
 
     bottle = draw_gloss()
-    art.alpha_composite(bottle, (326, 672))
+    bottle = bottle.resize((round(bottle.width * 0.78), round(bottle.height * 0.78)), Image.Resampling.LANCZOS)
+    art.alpha_composite(bottle, (333, 675))
 
     gem(art_draw, (316, 847), 32)
     gem(art_draw, (781, 941), 40)
@@ -162,14 +164,15 @@ def build_story():
     centered(draw, 1414, 'Thursday, 1 October  ·  Nineteen Cafe', body, MUTED)
     centered(draw, 1453, 'A hands-on afternoon of gloss, gems & good company.', body, MUTED)
 
-    draw.rounded_rectangle((163, 1530, 917, 1655), radius=24, fill=INK)
-    draw.text((540, 1567), 'THE NEW CHROMA EXPERIENCE IS HERE', font=small, fill=(241, 203, 207), anchor='mm')
-    draw.text((540, 1610), 'TAP THE LINK TO EXPLORE', font=cta_font, fill=(255, 249, 244), anchor='mm')
-    draw.line((838, 1594, 878, 1594), fill=(255, 249, 244), width=3)
-    draw.line((864, 1580, 878, 1594, 864, 1608), fill=(255, 249, 244), width=3, joint='curve')
+    draw.rounded_rectangle((145, 1518, 935, 1685), radius=24, fill=INK)
+    draw.text((540, 1547), 'DISCOVER THE NEW CHROMA SITE', font=small, fill=(241, 203, 207), anchor='mm')
+    draw.text((540, 1588), 'TAP THE LINK TO EXPLORE', font=cta_font, fill=(255, 249, 244), anchor='mm')
+    draw.line((838, 1588, 878, 1588), fill=(255, 249, 244), width=3)
+    draw.line((864, 1574, 878, 1588, 864, 1602), fill=(255, 249, 244), width=3, joint='curve')
+    draw.text((540, 1636), SITE_URL.removeprefix('https://').rstrip('/'), font=font('segoeuib.ttf', 19), fill=(249, 222, 218), anchor='mm')
 
     centered(draw, 1712, '@chroma_egy    ×    @dearly_digitalstudio', body_bold, INK)
-    centered(draw, 1752, 'Add the website as your Instagram Story link sticker', small, MUTED)
+    centered(draw, 1752, 'BOOK YOUR SPOT THROUGH THE STORY LINK', small, MUTED)
     centered(draw, 1812, 'DIGITAL EXPERIENCE BY DEARLY', tiny, ROSE_DARK)
 
     image.convert('RGB').save(OUTPUT, format='PNG', optimize=True)
