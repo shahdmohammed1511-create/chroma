@@ -269,7 +269,11 @@ const translations = {
     footer: {
       tagline: 'NEW EXPERIENCES, EVERY EDITION',
       credit: 'Digital Experience by Dearly',
-      dearlyLabel: 'DIGITAL EXPERIENCE BY',
+      dearlyLabel: 'DIGITAL EXPERIENCE & DIRECTION',
+      dearlyName: 'Dearly Studio',
+      dearlyDesc: 'Crafting bespoke digital experiences & boutique brand moments for exceptional creators.',
+      dearlyAction: 'Visit @dearly_digitalstudio on Instagram',
+      copyright: '© 2026 Chroma Experiences · Directed & Crafted by Dearly Digital Studio.',
     },
     mobileBar: {
       book: 'Book your spot',
@@ -498,7 +502,11 @@ const translations = {
     footer: {
       tagline: 'تجارب وأفكار جديدة مع كل إيديشن',
       credit: 'التجربة الرقمية من تطوير استوديو Dearly',
-      dearlyLabel: 'تطوير وتصميم',
+      dearlyLabel: 'تصميم وتطوير التجربة الرقمية',
+      dearlyName: 'استوديو Dearly الرقمي',
+      dearlyDesc: 'صناعة تجارب رقمية مميزة وهوية إبداعية للعلامات الاستثنائية والفعاليات الراقية.',
+      dearlyAction: 'تابعي استوديو @dearly_digitalstudio على إنستغرام',
+      copyright: '© 2026 فعاليات كروما · تصميم وتطوير استوديو Dearly الرقمي.',
     },
     mobileBar: {
       book: 'احجزي مكانكِ',
@@ -1239,13 +1247,6 @@ function PumpkinArtwork({ lang = 'en' }) {
       {/* Concrete Pumpkins Desk Illustration (Pure pumpkins & paint palette) */}
       <ConcretePumpkin className="concrete-pumpkin-hero" />
 
-      {/* Clean Tag Banner at Bottom (NO EMOJIS) */}
-      <div className="art-tag-banner">
-        <Sparkles size={13} />
-        <span>{t.tag}</span>
-        <Sparkles size={13} />
-      </div>
-
       <span className="art-sparkle art-sparkle-one"><Sparkles size={31} /></span>
       <span className="art-sparkle art-sparkle-two"><Sparkles size={21} /></span>
       <div className="art-sticker"><span>EDITION</span><b>02</b><Heart size={15} /></div>
@@ -1671,23 +1672,6 @@ function App() {
 
       {/* Tickets & Booking Section */}
       <section className="ticket-section section-pad" id="tickets">
-        <div className="ticket-visual" aria-label="Pumpkin and macrame illustration" role="img">
-          <div className="ticket-visual-copy">
-            <span>{t.tickets.visualKicker}</span>
-            <strong>
-              {t.tickets.visualTitleMain}<br />
-              <em>{t.tickets.visualTitleEm}</em> {t.tickets.visualTitleSub}
-            </strong>
-            <small>{t.tickets.visualCaption}</small>
-          </div>
-          <ConcretePumpkin className="ticket-pumpkin-art" />
-          <Gem className="ticket-gem ticket-gem-one" size={53} strokeWidth={1} />
-          <Gem className="ticket-gem ticket-gem-two" size={28} strokeWidth={1} />
-          <Sparkles className="ticket-sparkle ticket-sparkle-one" size={29} />
-          <Sparkles className="ticket-sparkle ticket-sparkle-two" size={20} />
-          <div className="ticket-visual-frame" />
-        </div>
-
         <div className="ticket-panel">
           <p className="eyebrow eyebrow-dark">{t.tickets.eyebrow}</p>
           <h2>
@@ -1913,7 +1897,7 @@ function App() {
           <p>{t.social.intro}</p>
         </div>
         <div className="social-links">
-          <a href="https://www.instagram.com/chroma_egy/" target="_blank" rel="noreferrer">
+          <a className="chroma-ig-link" href="https://www.instagram.com/chroma_egy/" target="_blank" rel="noreferrer">
             <Camera size={18} />
             <span>
               <small>{t.social.igChroma}</small>
@@ -1921,15 +1905,19 @@ function App() {
             </span>
             <ArrowUpRight size={16} />
           </a>
+
+          <a
+            className="dearly-under-chroma"
+            href="https://www.instagram.com/dearly_digitalstudio/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Camera size={12} />
+            <span>{lang === 'ar' ? 'صُنع بحب بواسطة Dearly' : 'Made with love by Dearly'}</span>
+            <ArrowUpRight size={11} />
+          </a>
         </div>
       </section>
-
-      {/* Site Footer - Dearly credit with luxury gold border */}
-      <footer className="site-footer">
-        <a className="dearly-credit" href="https://www.instagram.com/dearly_digitalstudio/" target="_blank" rel="noreferrer">
-          <Camera size={14} /> {t.footer.credit} <ArrowUpRight size={13} />
-        </a>
-      </footer>
 
       {/* Mobile Sticky Booking Bar */}
       <div className="mobile-book-bar">
